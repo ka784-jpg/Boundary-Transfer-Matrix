@@ -1,62 +1,54 @@
 # Figures 6, 7, and 12
 
-[Overview](../README.md) | [Code interfaces](CODE.md) | [Reproducibility](REPRODUCIBILITY.md)
+[Overview](../README.md) | [Method](METHOD.md) | [API](CODE.md) | [Validation](REPRODUCIBILITY.md)
 
-These are Kemal Aziz's contributions as identified by the author. Numbering
-follows [arXiv:2310.03078v2](https://arxiv.org/abs/2310.03078v2), by Kumar, Aziz,
-Chakraborty, Ludwig, Gopalakrishnan, Pixley, and Vasseur. The other circuit
-families in the paper are not represented as this repository's implementation.
+Numbering follows [arXiv:2310.03078v2](https://arxiv.org/abs/2310.03078v2), by
+Kumar, Aziz, Chakraborty, Ludwig, Gopalakrishnan, Pixley, and Vasseur. These
+dual-Haar calculations are the contribution covered by this repository.
+The images below are published results, not outputs of the small examples.
 
 ## Figure 6: Open-Boundary Free Energy
 
 ![Figure 6](figures/fig06.png)
 
-Open-boundary dual-Haar circuits supply the measurement-record observable.
-Finite-size fits separate bulk, surface, and universal contributions.
+Open-boundary record probabilities provide the finite-size free-energy observable.
 
-[Original PDF](figures/fig06.pdf) | [Recovered source](../research/open_boundary_haar.jl)
-| [Small driver](../examples/quickstart.jl).
+[Original PDF](figures/fig06.pdf) | [Research kernel](../research/open_boundary_haar.jl)
+| [Runnable example](../examples/quickstart.jl).
 
-The recovered template computes cumulative record surprisal. The small driver
-exercises its dynamics, but does not rerun the production ensemble or fit the
-published central charge. Historical batch provenance is incomplete.
+The example exercises gate evolution and Born measurements and saves cumulative
+record surprisal. Its eight trajectories per size are not a central-charge fit.
 
 ## Figure 7: Boundary Dissipation
 
 ![Figure 7](figures/fig07.png)
 
-The difference between dissipative and free-boundary free-energy densities
-isolates a boundary contribution. The paper implements boundary dephasing through
-Monte Carlo sampling of statevector trajectories.
+Comparing dissipative and open boundaries probes the boundary contribution.
 
-**Source status:** the original dephasing/Monte Carlo simulation has not yet been
-located. The open-boundary code alone cannot reproduce this plot.
+[Statevector and density-matrix methods](../src/BoundaryDephasing.jl)
+| [Boundary-dephasing driver](../examples/dephasing.jl)
+| [Algorithm](METHOD.md).
 
-The arXiv source asset `fs_fo_extrap.pdf` is actually PNG-encoded despite its
-filename. Here it is stored as `fig07.png`, with unchanged bytes and the correct
-extension. It is not a regenerated plot or an altered result.
+Use the density reference and hidden-history sampling checks before increasing
+system size or attempting a boundary-dimension fit. Production-quality estimates
+require long-time and ensemble convergence beyond the demonstration settings.
 
 ## Figure 12: Monte Carlo Convergence
 
 ![Figure 12](figures/fig12.png)
 
-The Monte Carlo sampling count is extrapolated to remove finite-sampling bias;
-small-system density-matrix calculations supply a benchmark.
+Published Monte Carlo extrapolation and density-matrix comparison.
 
-[Original PDF](figures/fig12.pdf).
-**Source status:** the historical Monte Carlo implementation, density-matrix
-benchmark, and fitting pipeline remain unconfirmed. They are not replaced by
-the example in this repository.
+[Original PDF](figures/fig12.pdf) | [Validation configuration](../examples/validation.toml)
+| [Saved numerical checks](../examples/dephasing_expected/).
 
-## Availability Summary
+## Executable Validation
 
-| Component | Status |
-| --- | --- |
-| Original open-boundary dual-Haar statevector template | Recovered from Amarel |
-| Short seeded open-boundary example | Runnable, with saved CSV and plot |
-| Original Fig. 7/12 statevector Monte Carlo code | Not yet located |
-| Production data and final ensemble fits | Not included |
-| Published figures 6, 7, 12 | Preserved with [source attribution](figures/README.md) |
+![Actual short-run validation](../examples/dephasing_validation.png)
 
-These explicit limits prevent a figure gallery from being mistaken for a
-complete reproduction package.
+This separate plot comes from the included code. Both calculations use the same
+records; the displayed differences isolate finite hidden-history sampling error.
+It tests the method on short circuits and does not recreate the published ensemble.
+
+All paper assets have [source attribution](figures/README.md) and
+[checksums](figure_manifest.json).

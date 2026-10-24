@@ -1,4 +1,5 @@
 using Test, LinearAlgebra, Random
+Random.seed!(2026)
 include("../examples/quickstart.jl")
 
 @testset "Original open-boundary kernels" begin
@@ -26,6 +27,8 @@ include("../examples/quickstart.jl")
     end
     @test OpenBoundary.gate(copy(psi), 4) == psi
 end
+
+include("dephasing.jl")
 
 @testset "Measurement record and density-matrix reference" begin
     OpenBoundary.trajectory(; L=2, p=1, steps=1)

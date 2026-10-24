@@ -48,6 +48,14 @@ def main():
             again = subprocess.run(command, capture_output=True)
             assert again.returncode != 0
             assert output.read_bytes() == before
+            dephasing = Path(folder) / "dephasing.png"
+            command = [sys.executable, str(ROOT / "examples" / "plot_dephasing.py"),
+                       str(ROOT / "examples" / "dephasing_expected"), str(dephasing)]
+            subprocess.run(command, check=True)
+            before = dephasing.read_bytes()
+            assert before.startswith(b"\x89PNG\r\n\x1a\n")
+            assert subprocess.run(command, capture_output=True).returncode != 0
+            assert dephasing.read_bytes() == before
     print(f"Verified {checked} hashes, {links} local links, and saved CSV data.")
 
 

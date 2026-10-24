@@ -1,0 +1,20 @@
+units = "nats per site per gate-plus-measurement layer"
+driver_sha256 = "bbe8eca33be4e1b07ba1f0c9f6763dca1bbba4083e03072bead277ff348be0b6"
+julia_version = "1.12.6"
+max_enumeration_logprob_error = 3.552713678800501e-15
+record_seed_rule = "seed + 100000*L + 10000*initial_state_index + record_id"
+source_sha256 = "063726523ffabe8c11992c184898672dfdd0f82adee645d230c5d073362fa126"
+inner_seed_rule = "record_seed + 1000000000"
+
+[config]
+exhaustive = true
+records_per_state = 8
+burnin = 0
+bootstrap_replicates = 500
+initial_states = ["haar", "product"]
+sizes = [2, 4, 6, 8]
+density_reference = true
+counts = [16, 64, 256, 300, 350, 400, 450, 500, 550, 600, 1024, 4096]
+layers = 12
+seed = 2026
+p = 0.14

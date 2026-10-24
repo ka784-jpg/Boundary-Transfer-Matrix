@@ -19,8 +19,11 @@ jobs:
         run: julia --project=. --startup-file=no tests/runtests.jl
       - name: Run README example
         run: julia --project=. --startup-file=no examples/quickstart.jl results/ci
+      - name: Run density-matrix comparison
+        run: julia --project=. --startup-file=no examples/dephasing.jl examples/dephasing.toml results/dephasing-ci
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
         with:
           python-version: '3.12'
       - run: python -m pip install -r examples/requirements.txt
       - run: python tests/integrity.py --plots
+      - run: python examples/plot_dephasing.py results/dephasing-ci results/dephasing-ci/convergence.png

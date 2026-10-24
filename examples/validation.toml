@@ -1,0 +1,11 @@
+sizes = [2, 4, 6, 8]
+p = 0.14
+layers = 12
+records_per_state = 8
+initial_states = ["haar", "product"]
+counts = [16, 64, 256, 300, 350, 400, 450, 500, 550, 600, 1024, 4096]
+seed = 2026
+burnin = 0
+density_reference = true
+exhaustive = true
+bootstrap_replicates = 500
