@@ -1,0 +1,25 @@
+{
+  "files": [
+    {
+      "sha256": "fed15ebb8b7861ae43dabc6fc7e46a7dfb3b14090ce170acceb41543d60ce5ca",
+      "path": "docs/figures/fig06.pdf"
+    },
+    {
+      "sha256": "377dd841725115f29fed2247c60287526001e4211d1e2dcbfca04c46951c45d4",
+      "path": "docs/figures/fig06.png"
+    },
+    {
+      "sha256": "89efb320a9ebc65dacf6452c08f2369b638f9db418c09a26e4c110f0b31903ee",
+      "path": "docs/figures/fig07.png"
+    },
+    {
+      "sha256": "957df662b9ff518244eaab64b96fd21f82dbda9906660846961d5c79519a922c",
+      "path": "docs/figures/fig12.pdf"
+    },
+    {
+      "sha256": "5016c5b99f173e4f29d4b0a95d9b56d0a639a897f38fe78537be417d7525f3e7",
+      "path": "docs/figures/fig12.png"
+    }
+  ],
+  "retrieved": "2026-10-24"
+}

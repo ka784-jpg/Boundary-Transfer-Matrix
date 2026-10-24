@@ -1,0 +1,11 @@
+{
+  "files": [
+    {
+      "sha256": "dbb8d26e518226eb0440dcf2914f4a00bbcf45bedd03acf06a327006cee23799",
+      "path": "research/open_boundary_haar.jl",
+      "origin": "old/ceff_openbc_fulltime_in_f/inputs/spins8_haar",
+      "cluster": "Amarel"
+    }
+  ],
+  "retrieved": "2026-10-24"
+}

@@ -1,0 +1,4 @@
+* text=auto eol=lf
+research/** -text
+docs/figures/*.pdf -text
+*.png -text

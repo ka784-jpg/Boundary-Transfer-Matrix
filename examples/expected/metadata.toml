@@ -1,0 +1,8 @@
+trajectories_per_size = 8
+julia_version = "1.12.6"
+seed_rule = "2026 + 100*L + trajectory_id"
+layers_per_site = 16
+sizes = [4, 6]
+source_sha256 = "dbb8d26e518226eb0440dcf2914f4a00bbcf45bedd03acf06a327006cee23799"
+description = "Small open-boundary example, no dephasing channel or CFT fit"
+p = 0.14

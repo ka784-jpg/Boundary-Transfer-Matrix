@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "Please cite the full coauthor paper when using these research methods."
+title: "Boundary Transfer Matrix: Dual-Haar Research Code"
+type: software
+authors:
+  - family-names: Aziz
+    given-names: Kemal
+repository-code: "https://github.com/ka784-jpg/Boundary-Transfer-Matrix"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Boundary transfer matrix spectrum of measurement-induced transitions"
+  authors:
+    - family-names: Kumar
+      given-names: Abhishek
+    - family-names: Aziz
+      given-names: Kemal
+    - family-names: Chakraborty
+      given-names: Ahana
+    - family-names: Ludwig
+      given-names: Andreas W. W.
+    - family-names: Gopalakrishnan
+      given-names: Sarang
+    - family-names: Pixley
+      given-names: J. H.
+    - family-names: Vasseur
+      given-names: Romain
+  journal: "Physical Review B"
+  volume: 109
+  start: "014303"
+  year: 2024
+  doi: "10.1103/PhysRevB.109.014303"
